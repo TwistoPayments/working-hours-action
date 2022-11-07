@@ -1,0 +1,31 @@
+name: 'Working hours'
+description: 'Check current time for working hours'
+inputs:
+    timezone:
+        description: 'Timezone'
+        required: false
+        default: 'UTC'
+    calendar:
+        description: 'Calendar'
+        required: false
+        default: ''
+    schedule:
+        description: 'Working hour schedule'
+        required: true
+    check_future_days:
+        description: 'Check working days in future'
+        required: false
+        default: '0'
+    fail_on_failure:
+        required: false
+        description: 'Fail on not working hours'
+        default: 'true'
+outputs:
+    working_hours:
+        description: 'True if working hours'
+runs:
+    using: 'node16'
+    main: 'dist/index.js'
+branding:
+    icon: briefcase
+    color: red
