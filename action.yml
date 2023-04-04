@@ -12,6 +12,10 @@ inputs:
     schedule:
         description: 'Working hour schedule'
         required: true
+    types:
+        required: false
+        description: 'Types of holidays to check (separated by `,`)'
+        default: 'public,bank,optional,school,observance'
     check_future_days:
         description: 'Check working days in future'
         required: false

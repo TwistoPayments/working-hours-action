@@ -33,6 +33,14 @@ saturday: ...
 sunday: ...
 ```
 
+### `types`
+
+Types of holidays to check for. Separated by `,`. Choose from public, bank, optional, school, observance.
+
+```yaml
+types: public,bank
+```
+
 ### `check_future_days`
 
 Number of days into future to check for additional working days/hours checks. Default `0`.
