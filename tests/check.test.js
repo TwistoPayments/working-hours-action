@@ -63,3 +63,18 @@ test("Test holidays", () => {
     expect(checker.checkWorkingDays(date)).toBeTruthy()
     expect(checker.checkWorkingDays(date.plus({days: 1}))).toBeFalsy()
 })
+
+test("Test holiday types", () => {
+    const checker = new Checker({
+        monday: null,
+        tuesday: null,
+        wednesday: null,
+        friday: null,
+        saturday: null,
+        sunday: null
+    }, "CZ", {types: ['bank', 'public']});
+    let date = DateTime.fromISO("2023-04-04T09:00:00")
+
+    expect(checker.checkWorkingDays(date)).toBeTruthy()
+    expect(checker.checkWorkingDays(date.plus({days: 1}))).toBeTruthy()
+})
